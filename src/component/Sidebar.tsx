@@ -389,152 +389,7 @@ const SideBar = () => {
 
 
 
-//    (
-//     <>
-//           <li className="menu-item">
-//                                    <a href="/admin" className="menu-link active">
-//                                        <span className="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M8.75 4.375v3.75a.625.625 0 0 1-.625.625h-3.75a.625.625 0 0 1-.625-.625v-3.75a.625.625 0 0 1 .625-.625h3.75a.625.625 0 0 1 .625.625Zm6.875-.625h-3.75a.625.625 0 0 0-.625.625v3.75a.625.625 0 0 0 .625.625h3.75a.625.625 0 0 0 .625-.625v-3.75a.625.625 0 0 0-.625-.625Zm-7.5 7.5h-3.75a.625.625 0 0 0-.625.625v3.75a.625.625 0 0 0 .625.625h3.75a.625.625 0 0 0 .625-.625v-3.75a.625.625 0 0 0-.625-.625Zm7.5 0h-3.75a.624.624 0 0 0-.625.625v3.75a.624.624 0 0 0 .625.625h3.75a.624.624 0 0 0 .625-.625v-3.75a.624.624 0 0 0-.625-.625Z" opacity="0.2"></path><path fill="currentColor" d="M15.625 10.625h-3.75a1.25 1.25 0 0 0-1.25 1.25v3.75a1.25 1.25 0 0 0 1.25 1.25h3.75a1.25 1.25 0 0 0 1.25-1.25v-3.75a1.25 1.25 0 0 0-1.25-1.25Zm0 5h-3.75v-3.75h3.75v3.75Zm-7.5-12.5h-3.75a1.25 1.25 0 0 0-1.25 1.25v3.75a1.25 1.25 0 0 0 1.25 1.25h3.75a1.25 1.25 0 0 0 1.25-1.25v-3.75a1.25 1.25 0 0 0-1.25-1.25Zm0 5h-3.75v-3.75h3.75v3.75Zm7.5-5h-3.75a1.25 1.25 0 0 0-1.25 1.25v3.75a1.25 1.25 0 0 0 1.25 1.25h3.75a1.25 1.25 0 0 0 1.25-1.25v-3.75a1.25 1.25 0 0 0-1.25-1.25Zm0 5h-3.75v-3.75h3.75v3.75Zm-7.5 2.5h-3.75a1.25 1.25 0 0 0-1.25 1.25v3.75a1.25 1.25 0 0 0 1.25 1.25h3.75a1.25 1.25 0 0 0 1.25-1.25v-3.75a1.25 1.25 0 0 0-1.25-1.25Zm0 5h-3.75v-3.75h3.75v3.75Z"></path></svg></span>
-//                                        <span className="menu-text">Dashboard</span>
-//                                    </a>
-//                              </li>
-//                               <li className="menu-item">
-//                                    <a href="#" className="menu-link">
-//                                       <span className="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="m17.5 5.625-2.228 7.243a1.25 1.25 0 0 1-1.196.882H6.568a1.25 1.25 0 0 1-1.202-.906L3.304 5.625H17.5Z" opacity="0.2"></path><path fill="currentColor" d="M7.5 16.875a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Zm6.875-1.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm3.723-9.816-2.23 7.243a1.866 1.866 0 0 1-1.791 1.323H6.568a1.883 1.883 0 0 1-1.802-1.36l-2.827-9.89H.625a.625.625 0 0 1 0-1.25h1.314a1.256 1.256 0 0 1 1.202.906L3.775 5H17.5a.625.625 0 0 1 .598.809Zm-1.444.441H4.132l1.835 6.422a.625.625 0 0 0 .601.453h7.509a.625.625 0 0 0 .597-.441l1.98-6.434Z"></path></svg></span>
-//                                        <span className="menu-text">Shops</span>
-//                                    </a>
-//                                 </li>
-//     </>
-//    )
 
-    // const menuItems = [
-    //     {
-    //         title: 'Shop',
-    //         icon: 'fa-solid fa-tachometer-alt',
-    //         link: '/admin',
-    //     },
-
-    //     {
-    //         title: 'Logo',
-    //         icon: 'fa-solid fa-image',
-    //         subItems: [
-    //             {
-    //                 title: 'Logo List',
-    //                 link: '/admin/logo-list',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         title: 'Section',
-    //         icon: 'fa-solid fa-image',
-    //         subItems: [
-    //             {
-    //                 title: 'Add Section',
-    //                 link: '/admin/add-section',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         title: 'About info',
-    //         icon: 'fa-solid fa-image',
-    //         subItems: [
-    //             {
-    //                 title: 'Add brif-info',
-    //                 link: '/admin/add-about-brief',
-    //             },
-    //             {
-    //                 title: 'Abou Brif List',
-    //                 link: '/admin/about-brif-list',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         title: 'Company',
-    //         icon: 'fa-solid fa-image',
-    //         subItems: [
-    //             {
-    //                 "title": "Add Company",
-    //                 "link": "/admin/add-company"
-    //             },
-    //             {
-    //                 "title": "Company List",
-    //                 "link": "/admin/company-list"
-    //             },
-    //             {
-    //                 "title": "Company Banner List",
-    //                 "link": "/admin/company-banner-list"
-    //             },
-    //             {
-    //                 "title": "Company About List",
-    //                 "link": "/admin/company-about-list"
-    //             },
-    //             {
-    //                 "title": "Company Service List",
-    //                 "link": "/admin/company-service-list"
-    //             },
-    //             {
-    //                 "title": "Company Product List",
-    //                 "link": "/admin/company-product-list"
-    //             },
-    //             {
-    //                 "title": "Company Slider List",
-    //                 "link": "/admin/company-slider-list"
-    //             },
-    //             {
-    //                 "title": "Company Gallery List",
-    //                 "link": "/admin/company-gallery-list"
-    //             }
-    //         ],
-    //     },
-    //     {
-    //         title: 'Customer',
-    //         icon: 'fa-solid fa-users',
-    //         subItems: [
-    //             {
-    //                 title: 'Add Customer',
-    //                 link: '/admin/add-customer',
-    //             },
-    //             {
-    //                 title: 'Customer List',
-    //                 link: '/admin/customer-list',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         title: 'Home Slider',
-    //         icon: 'fa-solid fa-image',
-    //         subItems: [
-    //             {
-    //                 title: 'Add Home Slider',
-    //                 link: '/admin/add-home-slider',
-    //             },
-    //             {
-    //                 title: 'Home Slider List',
-    //                 link: '/admin/home-slider-list',
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         title: 'Testimonial',
-    //         icon: 'fa-solid fa-comment-dots',
-    //         subItems: [
-    //             {
-    //                 title: 'Add Testimonial',
-    //                 link: '/admin/add-testimonial',
-    //             },
-    //             {
-    //                 title: 'Testimonial List',
-    //                 link: '/admin/testimonial-list',
-    //             },
-    //         ],
-    //     },
-        
-        
-    //     {
-    //         title: 'Withdrawals',
-    //         icon: 'fa-solid fa-money-check-alt',
-    //         link: '/admin/withdrawals',
-    //     },
-    // ];
 
     const menuItems = [
         {
@@ -674,10 +529,10 @@ const SideBar = () => {
             title: 'Web Info',
             icon: 'fa-solid fa-info-circle', // Add an appropriate icon here
             subItems: [
-                {
-                    title: 'Add Web Info',
-                    link: '/admin/add-webinfo',
-                },
+                // {
+                //     title: 'Add Web Info',
+                //     link: '/admin/add-webinfo',
+                // },
                 {
                     title: 'Web Info List',
                     link: '/admin/webinfo-list',

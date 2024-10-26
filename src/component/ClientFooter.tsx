@@ -52,6 +52,11 @@ const ClientFooter = () => {
   const footerDesc = footerData[5]?.infoValue || '';
   const footerNum = footerData[1]?.infoValue || '';
   const footerAddress = footerData[3]?.infoValue || '';
+  const facebook = footerData[6]?.infoValue || '';
+  const twitter = footerData[7]?.infoValue || '';
+  const instagram = footerData[8]?.infoValue || '';
+
+  // console.log('facebook =======>',facebook)
 
   return (
     <>
@@ -69,13 +74,13 @@ const ClientFooter = () => {
                 {footerDesc}
               </p>
               <div className="social-links">
-                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href={`${facebook}`} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
-                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href={`${twitter}`} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-twitter"></i>
                 </a>
-                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a className="d-inline-block rounded-circle fs-5 me-2 text-center text-white" href={`${instagram}`} target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
               </div>
@@ -87,7 +92,7 @@ const ClientFooter = () => {
                   {/* <Link className="text-white" href="/company">
                     Home
                   </Link> */}
-                   <Link className="text-white" href="/">
+                  <Link className="text-white" href="/">
                     Home
                   </Link>
                 </li>

@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+
+
+
 interface FooterData {
     infoKey: String,
     infoValue: String,
@@ -300,3 +305,26 @@ const ContactUs = () => {
 }
 
 export default ContactUs;
+
+// "use client"
+// import type { Metadata } from 'next'
+// import { useState } from 'react';
+
+// export const metadata: Metadata = {
+//     title: 'sanjay',
+//     description: 'web developer',
+//   }
+
+// const ContactUs = () => {
+
+//     const [lastName, setLastName] = useState("")
+//   return (
+//     <>
+      
+//       <h1>Hi Sanjay</h1>
+//     </>
+//   );
+// };
+
+// export default ContactUs;
+

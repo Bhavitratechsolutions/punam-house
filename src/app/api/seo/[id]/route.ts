@@ -15,9 +15,6 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
 }
 
-
-
-
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -28,7 +25,8 @@ export async function PUT(
     const updatedSeoData = {
       title: body.title,
       description: body.description,
-      keywords: body.keywords, // Ensure keywords are properly passed as an array
+      keywords: body.keywords,
+      seoPage:body.seoPage,
     };
 
     const section = await Seo.findByIdAndUpdate(params.id, updatedSeoData, {

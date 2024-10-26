@@ -292,6 +292,7 @@ interface List {
     title: string;
     description: string;
     keywords: string;
+    seoPage:String,
 }
 
 const Page = () => {
@@ -307,6 +308,7 @@ const Page = () => {
     const [searchItem, setSearchItem] = useState('');
     const [isEdit, setIsEdit] = useState(false);
     const [editItemId, setEditItemId] = useState('');
+    const [seoPage, setSeoPage] = useState('');
 
     useEffect(() => {
         getItemList();
@@ -316,11 +318,13 @@ const Page = () => {
         let response = await axios.get('/api/seo');
         setDataList(response.data);
         setLoading(false);
-        console.log(response.data);
+        // console.log(response.data);
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!seoPage || seoPage==="" ) return toast.error(" Please Select Page ");
 
         // Split the keywords by comma and trim spaces
         const keywordsArray = keywords.split(',').map((keyword) => keyword.trim()).join(',');
@@ -329,7 +333,13 @@ const Page = () => {
             title,
             keywords: keywordsArray,
             description,
+             seoPage
         };
+
+      
+        
+
+        
 
         if (isEdit) {
             let response = await axios.put(`/api/seo/${editItemId}`, formData);
@@ -351,7 +361,7 @@ const Page = () => {
                 } else {
                     toast.error("Something went wrong ");
                 }
-            } catch (error:any) {
+            } catch (error: any) {
                 toast.error("An error occurred: " + error.message);
             }
         }
@@ -368,11 +378,13 @@ const Page = () => {
     const handleEdit = (item: any, id: string) => {
         setShow(true);
         if (item) {
+            // console.log('item is =======>',item)
             setIsEdit(true);
             setTitle(item.title);
             setKeywords(item.keywords);
             setDescription(item.description);
             setEditItemId(item._id);
+            setSeoPage(item?.seoPage);
         }
     };
 
@@ -425,6 +437,7 @@ const Page = () => {
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Page Name</th>
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Keywords</th>
@@ -442,9 +455,10 @@ const Page = () => {
                                                 .map((item, i) => (
                                                     <tr key={i}>
                                                         <td>{i + 1}</td>
-                                                        <td>{item.title}</td>
-                                                        <td>{item.description}</td>
-                                                        <td>{item.keywords}  </td>
+                                                        <td>{item.seoPage}</td>
+                                                        <td>{item.title.substring(0,30)}</td>
+                                                        <td>{item.description.substring(0,30)}</td>
+                                                        <td>{item.keywords.substring(0,30)}  </td>
                                                         <td>
                                                             <div>
                                                                 <i
@@ -480,6 +494,24 @@ const Page = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
+
+
+                        <div className="card-body">
+                            <div className="row mb-3">
+                                <div className="col-12">
+                                    <label className="form-label fw-medium"> Seo Page </label>
+                                    <select className="form-select" name=""  value={seoPage} onChange={(e) => setSeoPage(e.target.value)}>
+                                        <option value=""> Select Page </option>
+                                        <option value="about-us"> About Us</option>
+                                        <option value="contact-us"> Contact Us</option>
+                                        <option value="gallery"> Gallery </option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="form-group">
                             <label>SEO Title</label>
                             <input
@@ -722,7 +754,7 @@ export default Page;
 //                       </td>
 //                     </tr>
 //                   )}
-//                 </tbody> 
+//                 </tbody>
 //                                 <tbody>
 //                                     {dataList.length > 0 ? (
 //                                         dataList

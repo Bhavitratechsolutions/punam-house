@@ -5,6 +5,7 @@ export interface ISeo extends Document {
     title: string;
     description: string;
     keywords: string; // Cha
+    seoPage: string;
     // keywords: string[]; // Cha
     
 
@@ -24,6 +25,9 @@ const SeoSchema: Schema<ISeo> = new mongoose.Schema({
         type: String,
         
     },
+    seoPage:{
+        type: String, 
+    }
 
     // keywords: { // Changed from `keyword: []` to `keywords`
     //     type: [String], // Specified that it's an array of strings

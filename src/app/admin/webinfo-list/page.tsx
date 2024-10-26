@@ -69,7 +69,7 @@ const ItemtList = () => {
     const indexOfLastItem = activePage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const filteredDataList = dataList.filter(item =>
-        searchItem.toLowerCase() === "" ? item : item.infoValue.toLowerCase().includes(searchItem)
+        searchItem.toLowerCase() === "" ? item : item.infoValue.toLowerCase().includes(searchItem) || item.infoKey.toLowerCase().includes(searchItem)
     );
     const currentItems = filteredDataList.slice(indexOfFirstItem, indexOfLastItem);
 

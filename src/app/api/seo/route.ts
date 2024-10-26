@@ -5,12 +5,13 @@ import Seo from "../../../../backend/models/seo";
 export async function POST(request: NextRequest, ) { 
     dbConnect();
    const body = await request.json();
-   const {title, description,keywords } = body;
+   const {title, description,keywords,seoPage } = body;
 
    const section = await Seo.create({
        title,
        description,
        keywords,
+       seoPage
    });
 
    return NextResponse.json({
