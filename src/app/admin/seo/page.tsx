@@ -337,9 +337,7 @@ const Page = () => {
         };
 
       
-        
-
-        
+    
 
         if (isEdit) {
             let response = await axios.put(`/api/seo/${editItemId}`, formData);
@@ -458,7 +456,8 @@ const Page = () => {
                                                         <td>{item.seoPage}</td>
                                                         <td>{item.title.substring(0,30)}</td>
                                                         <td>{item.description.substring(0,30)}</td>
-                                                        <td>{item.keywords.substring(0,30)}  </td>
+                                                        <td> {item.keywords.substring(0,30).replace(/,/g, ', ')} </td>
+                                                       
                                                         <td>
                                                             <div>
                                                                 <i

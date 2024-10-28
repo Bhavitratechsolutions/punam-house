@@ -4,6 +4,8 @@ import { ICompany } from "./company";
 
 export interface ICompanyAbout extends Document {
     company: ICompany;
+    aboutHeading:String,
+    aboutDesc:String,
     title:String,
     description: string;
     otherDesc: string;
@@ -18,7 +20,15 @@ const CompanyAboutSchema: Schema<ICompanyAbout> = new mongoose.Schema({
         required: true,
         ref: "Company",
       },
-    title: {
+      title: {
+        type: String,
+       
+    },
+    aboutHeading: {
+        type: String,
+       
+    },
+    aboutDesc: {
         type: String,
        
     },

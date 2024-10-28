@@ -23,7 +23,8 @@ interface ComanyList {
 
 const Edit = () => {
     const [prevImg, setPrevImg] = useState<string | null>(null);
-    const [heading, setHeading] = useState<string>('');
+    const [aboutHeading, setAboutHeading] = useState<string>('');
+    const [aboutDesc, setAboutDesc] = useState<string>('');
     const [title, setTitle] = useState<string>('');
     const [company, setCompany] = useState<string>('');
     const [description, setDescription] = useState<string>('');
@@ -50,6 +51,8 @@ const Edit = () => {
         try {
             let response = await axios.get(`/api/company-about/${id}`);
             if (response.data) {
+                setAboutHeading(response.data.aboutHeading);
+                setAboutDesc(response.data.aboutDesc);
                 setDescription(response.data.description);
                 setOtherDesc(response.data.otherDesc);
                 setTitle(response.data.title);
@@ -79,8 +82,10 @@ const Edit = () => {
             const data = new FormData();
             data.set('file', image);
             data.set('title', title);
+            data.set('aboutHeading', aboutHeading);
+            data.set('aboutDesc', aboutDesc);
             data.set('company', company);
-            data.set('heading', heading);
+
             data.set('description', description);
             data.set('otherDesc', otherDesc);
 
@@ -252,6 +257,31 @@ const Edit = () => {
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div className="card border-0 p-3 shadow-sm">
+                                            <div className="card-body">
+                                                <div className="row mb-3">
+                                                    <div className="col-12">
+                                                        <label className="form-label fw-medium" >  Company About Heading  *</label>
+                                                        <input className="form-control" type="text" name="" placeholder="Company About Heading"
+                                                            value={aboutHeading}
+                                                            onChange={(e) => setAboutHeading(e.target.value)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="card border-0 p-3 shadow-sm">
+                                            <div className="card-body">
+                                                <div className="row mb-3">
+                                                    <div className="col-12">
+                                                        <label className="form-label fw-medium"  >Company About Description </label>
+                                                        <textarea className="form-control" value={aboutDesc} placeholder="Description" rows={5} onChange={(e) => setAboutDesc(e.target.value)} id="comment" name="text"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div className="card border-0 p-3 shadow-sm">
                                             <div className="card-body">
                                                 <div className="row mb-3">

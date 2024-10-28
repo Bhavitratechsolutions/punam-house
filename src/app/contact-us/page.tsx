@@ -16,6 +16,10 @@ interface FooterData {
     infoValue: String,
 }
 
+interface Props {
+  location: string; // Use 'string' instead of 'String'
+}
+
 
 const ContactUs = () => {
 
@@ -96,6 +100,11 @@ const ContactUs = () => {
     const footerPhoneNo = footerData[2]?.infoValue || '';
     const footerAddress = footerData[3]?.infoValue || '';
 
+    const locationFromAPI = footerData[9]?.infoValue || "";
+
+    
+    const cleanLocation = locationFromAPI.replace(/&#39;/g, "'"); // Replacing HTML entity for apostrophe
+   
 
 
     return (
@@ -281,9 +290,19 @@ const ContactUs = () => {
                     <section className="py-5">
                         <div className="container">
 
+                        <iframe
+  className="w-100"
+  src={cleanLocation}
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
 
+                           
 
-                            <iframe
+                            {/* <iframe
                                 className="w-100"
 
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14738.770985442463!2d88.3802056!3d22.5531797!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b50996c415%3A0xb35e5e42a12a5602!2sPoonam&#39;s%20house!5e0!3m2!1sen!2sin!4v1728990752346!5m2!1sen!2sin"
@@ -292,7 +311,9 @@ const ContactUs = () => {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                            ></iframe>
+                            ></iframe> */}
+
+
                         </div>
                     </section>
                 </main>

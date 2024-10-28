@@ -1,9 +1,6 @@
 
 
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
-import { writeFile } from "fs/promises";
-
 import ComapnyAbout from "../../../../backend/models/company-about";
 import dbConnect from "../../../../backend/config/dbConnect";
 import { uploadFile } from "../../../../backend/utils/cloudinary";
@@ -55,12 +52,16 @@ export const POST = async (req: NextRequest) => {
 
     const company = formData.get('company');
     const title = formData.get('title');
+    const aboutHeading = formData.get('aboutHeading');
+    const aboutDesc = formData.get('aboutDesc');
     const otherDesc = formData.get('otherDesc')
     const description = formData.get('description')
 
 
     await ComapnyAbout.create({
       company,
+      aboutHeading,
+      aboutDesc,
       title,
       otherDesc,
       description,

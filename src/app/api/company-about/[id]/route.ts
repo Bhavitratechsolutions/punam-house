@@ -1,9 +1,7 @@
 
 
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir, unlink } from 'fs/promises';
 import CompanyAbout from '../../../../../backend/models/company-about';
-
 import dbConnect from '../../../../../backend/config/dbConnect';
 import path from 'path';
 import fs from 'fs/promises'
@@ -64,6 +62,10 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   try {
     const formData = await req.formData();
 
+    // console.log('Company form data is =>',formData)
+
+   
+
      // Get file from form data (optional)
      const file = formData.get('file') as unknown as File | null;
 
@@ -83,17 +85,19 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       about_img = aboutBrief.about_img
      }
 
-
-    
+     const company = formData.get('company') as string;
+     const aboutHeading = formData.get('aboutHeading') as string;
+    const aboutDesc = formData.get('aboutDesc') as string;
     const title = formData.get('title') as string;
-    const company = formData.get('company') as string;
     const description = formData.get('description') as string;
     const otherDesc = formData.get('otherDesc') as string;
+
+   
 
     // Update the banner with the new data
     const updatedCompanyAbout = await CompanyAbout.findByIdAndUpdate(
       params.id,
-      { $set: {title,company, description,otherDesc, about_img } },
+      { $set: {company,aboutHeading,aboutDesc,title,description,otherDesc, about_img } },
       { new: true }
     );
 

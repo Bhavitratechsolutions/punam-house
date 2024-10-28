@@ -9,6 +9,8 @@ interface SlugProps {
 
 
 interface ApiData {
+    aboutHeading: String,
+    aboutDesc: String,
     title?: string;
     description?: string;
     otherDesc?: string;
@@ -55,23 +57,25 @@ const CompanyAbout = ({ slug }: SlugProps) => {
         }
     };
 
-   
-    
+
+
+
     return (
         <>
 
 
             <section className="py-5">
                 <div className="container">
-                    <h2 className="text-color-1 text-center"> {section[4]?.heading}</h2>
-                    <p className="text-center">{section[4]?.description.substring(0,63)} <br /> {section[4]?.description.substring(63)} </p>
+                    <h2 className="text-color-1 text-center"> {apiData?.aboutHeading}</h2>
+                    <p className="text-center">{apiData?.aboutDesc.substring(0, 63)}  <br /> {apiData?.aboutDesc.substring(63)} </p>
+                    {/* <p className="text-center">{section[4]?.description.substring(0,63)} <br /> {section[4]?.description.substring(63)} </p> */}
                     <div className="row mt-5">
                         <div className="col-md-6 mb-3 mb-md-0">
                             <div className="about-img-group position-relative">
                                 {/* <img className="img-fluid" src="/img/about-img1 1.png" alt="" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="400" /> */}
                                 <Image
                                     className="img-fluid"
-                                    src={typeof apiData?.about_img === 'string' ? apiData.about_img : '/img/about-img1 1.png'  }
+                                    src={typeof apiData?.about_img === 'string' ? apiData.about_img : '/img/about-img1 1.png'}
 
                                     alt=""
                                     width={0}
@@ -106,25 +110,6 @@ const CompanyAbout = ({ slug }: SlugProps) => {
 
                                     <span>{apiData?.otherDesc ? ReactHtmlParser(apiData?.otherDesc as string) : null}</span>
 
-
-
-
-
-
-                                    {/* <ul className="list-unstyled">
-                                        <li className="mb-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
-                                            <i className="fa-solid fa-circle-check text-color-1 me-1"></i>
-                                            <span>Highlight the unique features or benefits</span>
-                                        </li>
-                                        <li className="mb-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
-                                            <i className="fa-solid fa-circle-check text-color-1 me-1"></i>
-                                            <span>Our Commitment to Sustainable Energy</span>
-                                        </li>
-                                        <li className="mb-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="800">
-                                            <i className="fa-solid fa-circle-check text-color-1 me-1"></i>
-                                            <span>Present your main solutions/services.</span>
-                                        </li>
-                                    </ul> */}
                                 </div>
                                 <a className="btn btn-primary px-4 py-2" href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">About us</a>
                             </div>

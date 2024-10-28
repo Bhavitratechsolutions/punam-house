@@ -57,7 +57,7 @@ const CompanyService = ({ slug }: SlugProps) => {
                                         <div className="electricity-service-list">
                                             <ul className="nav nav-pills list-unstyled">
 
-                                                {dataList.length > 0 &&  dataList.slice(0,4).map((item, i) => (
+                                                {dataList.length > 0 &&  dataList.slice(0,5).map((item, i) => (
                                                     <>
                                                         <li className="nav-item mb-3 w-100" key={i} onClick={() => setActive(i)}>
                                                             <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="400">
@@ -68,6 +68,8 @@ const CompanyService = ({ slug }: SlugProps) => {
                                                                         {i === 2 && <img src="/img/icons/list1.svg" alt="" />}
                                                                         {i === 3 && <img src="/img/icons/work2.svg" alt="" />}
                                                                         {i > 3 && <img src="/img/icons/list1.svg" alt="" />}
+                                                                        {i > 4 && <img src="/img/icons/list1.svg" alt="" />}
+                                                                        
                                                                     </span>
                                                                     <span> {item.serviceName}</span>
                                                                 </button>

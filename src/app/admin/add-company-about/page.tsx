@@ -23,6 +23,8 @@ interface ComanyList {
 const Add = () => {
     const [prevImg, setPrevImg] = useState<string | null>(null);
     const [title, setTitle] = useState<string>('');
+    const [aboutHeading, setAboutHeading] = useState<string>('');
+    const [aboutDesc, setAboutDesc] = useState<string>('');
     const [description, setDescription] = useState<string>('');
     const [otherDesc, setOtherDesc] = useState<string>('');
     const [company, setCompany] = useState<string>('');
@@ -53,6 +55,8 @@ const Add = () => {
 
             data.set('company', company);
             data.set('file', image);
+            data.set('aboutHeading', aboutHeading);
+            data.set('aboutDesc', aboutDesc);
             data.set('title', title);
             data.set('description', description);
             data.set('otherDesc', otherDesc);
@@ -224,6 +228,31 @@ const Add = () => {
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div className="card border-0 p-3 shadow-sm">
+                                            <div className="card-body">
+                                                <div className="row mb-3">
+                                                    <div className="col-12">
+                                                        <label className="form-label fw-medium" >  Company About Heading  *</label>
+                                                        <input className="form-control" type="text" name="" placeholder="Company About Heading"
+                                                            value={aboutHeading}
+                                                            onChange={(e) => setAboutHeading(e.target.value)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="card border-0 p-3 shadow-sm">
+                                            <div className="card-body">
+                                                <div className="row mb-3">
+                                                    <div className="col-12">
+                                                        <label className="form-label fw-medium"  >Company About Description </label>
+                                                        <textarea className="form-control" value={aboutDesc} placeholder="Description" rows={5} onChange={(e) => setAboutDesc(e.target.value)} id="comment" name="text"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div className="card border-0 p-3 shadow-sm">
                                             <div className="card-body">
                                                 <div className="row mb-3">
