@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface SlugProps {
     slug: string;
@@ -113,9 +114,9 @@ const CompanyService = ({ slug }: SlugProps) => {
                                             <p className="text-secondary mb-4">
                                                 {dataList?.[active]?.description || 'No Description Available'}
                                             </p>
-                                            <a className="btn btn-primary px-4 py-2" href="#">
+                                            <Link href="/contact-us" className="btn btn-primary px-4 py-2" >
                                                 Book A Consultation
-                                            </a>
+                                            </Link>
                                         </div>
 
                                     </div>
